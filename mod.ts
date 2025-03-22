@@ -15,7 +15,7 @@ function log(data: unknown) {
     console.error(`${data}`);
 }
 
-function main() {
+async function main() { // Make the main function async
     // Parse CLI arguments
     const args = parse(Deno.args);
 
@@ -61,6 +61,22 @@ function main() {
     try {
         const result = hasArgs ? method(options) : method();
         log(result);
+
+        // Copy the result to the clipboard if available
+        if (typeof result === "string" || typeof result === "number") {
+            const command = new Deno.Command("pbcopy", {
+                stdin: "piped",
+            });
+
+            const process = command.spawn();
+            const encoder = new TextEncoder();
+            const writer = process.stdin.getWriter();
+            await writer.write(encoder.encode(String(result)));
+            writer.close();
+            await process.status;
+            log("Result copied to clipboard!");
+        }
+
     } catch (error) {
         logError(`Error: Failed to execute "faker.${moduleName}.${methodName}(${hasArgs ? JSON.stringify(options) : ''})".`, {moduleName, methodName, options, error});
         logWarning(`Visit https://fakerjs.dev/api/${moduleName}.html for detailed info about the available methods and how to use them.`);
@@ -69,5 +85,5 @@ function main() {
 
 // Run the CLI if executed directly
 if (import.meta.main) {
-    main();
+    await main(); // Add await here since main is now async
 }
