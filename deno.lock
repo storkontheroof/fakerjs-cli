@@ -1,0 +1,33 @@
+{
+  "version": "4",
+  "specifiers": {
+    "jsr:@jackfiszr/faker@1.1.6": "1.1.6",
+    "npm:@types/node@*": "22.12.0"
+  },
+  "jsr": {
+    "@jackfiszr/faker@1.1.6": {
+      "integrity": "0d04ca2a13889243670c17ef30d318208c918a7c6a5afbdb6e0958d4cd71e98b"
+    }
+  },
+  "npm": {
+    "@types/node@22.12.0": {
+      "integrity": "sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==",
+      "dependencies": [
+        "undici-types"
+      ]
+    },
+    "undici-types@6.20.0": {
+      "integrity": "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="
+    }
+  },
+  "redirects": {
+    "https://esm.sh/@faker-js/faker": "https://esm.sh/@faker-js/faker@9.6.0",
+    "https://esm.sh/@faker-js/faker@v9.6.0": "https://esm.sh/@faker-js/faker@9.6.0"
+  },
+  "remote": {
+    "https://deno.land/std@0.152.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
+    "https://deno.land/std@0.152.0/flags/mod.ts": "34bb4148ad1cbdf1e3d20e1541f36c8a5b47205e3a5ee4e62a71eab89215011b",
+    "https://esm.sh/@faker-js/faker@9.6.0": "3fee5e72e95720a2a92608aee993cd395a1f73d5229542289d7735c533d93b31",
+    "https://esm.sh/@faker-js/faker@9.6.0/denonext/faker.mjs": "78477317f31a9cf2418ad35e3a81f4e10af9902475e5c5c7ee0d42a82fca48b8"
+  }
+}

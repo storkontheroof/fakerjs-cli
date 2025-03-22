@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": ["deno.ns", "deno.window"]
+  },
+  "tasks": {
+    "build": {
+      "command": "deno run --allow-read --allow-write mod.ts",
+      "description": "Build the CLI utility"
+    }
+  },
+  "lint": {
+    "files": {
+      "include": ["src/**/*.ts", "deps.ts", "mod.ts"]
+    }
+  },
+  "fmt": {
+    "options": {
+      "lineWidth": 80
+    }
+  }
+}
